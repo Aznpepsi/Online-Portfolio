@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Prologue by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">James Banh</h1>
+							<p>High School Student</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://twitter.com/" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt" style="color:cyan">Hi! I'm James Banh, a Student studying at Burton High School</h2>
+								<p style="color:cyan">Welcome to my website. It has pictures of my favorite things.</p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">Down</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+						<table border="0" width="200" cellspacing="0" cellpadding="3">
+<form name="where">
+  <tr>
+    <td width="100%">
+<select name="city" size="1" onchange="updateclock(this);"> 
+<option value="" selected>Local time</option>
+<option value="0">London GMT</option> 
+<option value="1">Rome</option>
+<option value="7">Bangkok</option>
+<option value="8">Hong Kong</option>
+<option value="9">Tokyo</option> 
+<option value="10">Sydney</option>
+<option value="12">Fiji</option>
+<option value="-10">Hawaii</option>
+<option value="-8">San Francisco</option> 
+<option value="-5">New York</option>
+<option value="-3">Buenos Aires</option>
+</select>
+
+</td>
+  </tr>
+  <tr>
+    <td width="100%">
+<script language="JavaScript">
+
+/*
+Drop Down World Clock- By JavaScript Kit (http://www.javascriptkit.com)
+Portions of code by Kurt @ http://www.btinternet.com/~kurt.grigg/javascript
+This credit notice must stay intact
+*/
+
+if (document.all||document.getElementById)
+document.write('<span id="worldclock" style="font:bold 16px Arial;"></span><br />')
+
+zone=0;
+isitlocal=true;
+ampm='';
+
+function updateclock(z){
+zone=z.options[z.selectedIndex].value;
+isitlocal=(z.options[0].selected)?true:false;
+}
+
+function WorldClock(){
+now=new Date();
+ofst=now.getTimezoneOffset()/60;
+secs=now.getSeconds();
+sec=-1.57+Math.PI*secs/30;
+mins=now.getMinutes();
+min=-1.57+Math.PI*mins/30;
+hr=(isitlocal)?now.getHours():(now.getHours() + parseInt(ofst)) + parseInt(zone);
+hrs=-1.575+Math.PI*hr/6+Math.PI*parseInt(now.getMinutes())/360;
+if (hr < 0) hr+=24;
+if (hr > 23) hr-=24;
+ampm = (hr > 11)?"PM":"AM";
+statusampm = ampm.toLowerCase();
+
+hr2 = hr;
+if (hr2 == 0) hr2=12;
+(hr2 < 13)?hr2:hr2 %= 12;
+if (hr2<10) hr2="0"+hr2
+
+var finaltime=hr2+':'+((mins < 10)?"0"+mins:mins)+':'+((secs < 10)?"0"+secs:secs)+' '+statusampm;
+
+if (document.all)
+worldclock.innerHTML=finaltime
+else if (document.getElementById)
+document.getElementById("worldclock").innerHTML=finaltime
+else if (document.layers){
+document.worldclockns.document.worldclockns2.document.write(finaltime)
+document.worldclockns.document.worldclockns2.document.close()
+}
+
+
+setTimeout('WorldClock()',1000);
+}
+
+window.onload=WorldClock
+//-->
+</script>
+
+<!--Place holder for NS4 only-->
+<ilayer id="worldclockns" width=100% height=35><layer id="worldclockns2" width=100% height=35 left=0 top=0 style="font:bold 16px Arial;"></layer></ilayer>
+
+
+</td>
+</form>
+  </tr>
+</table>
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+
+							<p>Below are some of my favorite things in life. Each of these things represent a different part of me.</p>
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+										<header>
+											<h3>Counter Strike Global Offensive</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+										<header>
+											<h3>San Francisco</h3>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>PIZZA!</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+										<header>
+											<h3>Exercising</h3>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+										<header>
+											<h3>Doodle For Google</h3>
+											<p>This was my Doodle For Google assignment. This was from last semester, I had a lot of fun on it because I got to draw what represents me.</p>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Family and Friends</h3>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+
+							<p>I was born in San Francisco and I have been living here my whole life. I am 15 years old and I am currently a sophomore studying at Philip and Sala Burton High School. I want to create this online portfolio so people will learn more about me. I plan to go to U.C Davis and peruse my career of being a pharmacist. My favorite food in the whole wide world is pizza. My favorite place to get pizza is at the Costco food court, I really like to get it from there because you can buy at really big pizza that can fill you up fast and taste awesome for only $12. My favorite game in the whole wide world is Counter Strike Global Offensive. It is my favorite game because it takes a lot of skill to play.</p>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>You can contact me by submitting your email, sending me your phone number or just send me a message.</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Submit" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
